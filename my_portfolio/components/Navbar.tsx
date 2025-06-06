@@ -9,7 +9,6 @@ import {
   User2Icon,
   Menu,
   X,
-  PhoneIcon,
   ExternalLink,
 } from "lucide-react";
 import Link from "next/link";
