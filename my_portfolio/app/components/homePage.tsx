@@ -2,7 +2,8 @@
 import React from "react";
 import SplitText from "./_components/SplitText";
 import Typewriter from "react-ts-typewriter";
-
+import Image from "next/image";
+import myimage from "../public/images/myimage.jpeg";
 function HomePage() {
   return (
     <div className="min-h-screen flex flex-col-reverse lg:flex-row items-center justify-center px-6 py-20 bg-gradient-to-br from-white via-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-black transition-colors duration-500">
@@ -56,9 +57,11 @@ function HomePage() {
           <div className="absolute inset-0 rounded-full ring-2 ring-purple-500 opacity-20 blur-sm"></div>
 
           {/* Profile Image */}
-          <img
-            src="https://media.licdn.com/dms/image/v2/D4D03AQHtpAoIYKcJ3A/profile-displayphoto-shrink_400_400/B4DZTM0B.fHYAg-/0/1738602981000?e=1754524800&v=beta&t=X_hAV8IZKRBWkgfhdvF1oUw3LGZ1XeQw_7hnzZQamks"
+          <Image
+            src={myimage}
             alt="Mudasir Irshad"
+            width={288} // width in px (72 * 4)
+            height={288}
             className="w-72 h-72 object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl z-10"
             onError={(e) => {
               e.currentTarget.src = "/fallback-image.jpeg";

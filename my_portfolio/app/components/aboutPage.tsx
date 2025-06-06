@@ -20,8 +20,8 @@ function AboutPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-2">👋 Who I Am</h2>
             <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-              I’m <strong>Mudasir Irshad</strong>, a full-stack developer with a
-              love for clean code and smart design. My journey began with
+              I&apos;m <strong>Mudasir Irshad</strong>, a full-stack developer
+              with a love for clean code and smart design. My journey began with
               curiosity and turned into a passion for building scalable, modern
               web applications using technologies like <strong>React</strong>,{" "}
               <strong>Next.js</strong>, <strong>TypeScript</strong>, and
@@ -61,10 +61,12 @@ function AboutPage() {
 
           {/* Call to Action */}
           <section className="text-center">
-            <h3 className="text-xl font-semibold mb-2">🚀 Let's Connect</h3>
+            <h3 className="text-xl font-semibold mb-2">
+              🚀 Let&apos;s Connect
+            </h3>
             <p className="text-md text-gray-600 dark:text-gray-400">
-              If you're looking to collaborate, discuss a project, or just say
-              hi — feel free to reach out!
+              If you&apos;re looking to collaborate, discuss a project, or just
+              say hi — feel free to reach out!
             </p>
             <a
               href="mailto:mudasirirshad47@gmail.com?subject=Let's%20Connect&body=Hi%20Mudasir,"
