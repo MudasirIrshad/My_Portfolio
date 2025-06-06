@@ -3,35 +3,55 @@
 import React, { useState } from "react";
 import { ModeToggle } from "./ToggleTheme";
 import { Button } from "./ui/button";
-import { Code2Icon, HomeIcon, User2Icon, Menu, X } from "lucide-react";
+import {
+  Code2Icon,
+  HomeIcon,
+  User2Icon,
+  Menu,
+  X,
+  PhoneIcon,
+  ExternalLink,
+} from "lucide-react";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navItems = [
-    { label: "Home", icon: <HomeIcon className="mr-2 h-4 w-4" />, href: "/" },
+    {
+      label: "Home",
+      icon: <HomeIcon className="mr-2 h-4 w-4" />,
+      href: "#home",
+    },
     {
       label: "About",
       icon: <User2Icon className="mr-2 h-4 w-4" />,
-      href: "/about",
+      href: "#about",
     },
     {
       label: "Projects",
       icon: <Code2Icon className="mr-2 h-4 w-4" />,
-      href: "/projects",
+      href: "#projects",
     },
   ];
 
   return (
-    <nav className="w-full px-4 py-2 fixed top-0 z-50 backdrop-blur-md bg-white/30 dark:bg-black/30 border-b border-gray-200 dark:border-gray-700 shadow-sm">
+    <motion.nav
+      initial={{ opacity: 0, y: 100 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5 },
+      }}
+      className="w-full px-4 py-2 fixed top-0 z-50 backdrop-blur-md bg-white/30 dark:bg-black/30 border-b border-gray-200 dark:border-gray-700 shadow-sm"
+    >
       <div className="max-w-7xl mx-auto relative">
         {/* Top bar */}
         <div className="flex items-center justify-between">
           {/* Logo or Brand Name */}
-          <div className="text-lg font-semibold">MyPortfolio</div>
+          <div className="text-lg font-semibold italic">Mudasir Irshad</div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
@@ -43,6 +63,12 @@ function Navbar() {
                 </Button>
               </Link>
             ))}
+            <a href="mailto:mudasirirshad47@gmail.com?subject=Let's%20Connect&body=Hi%20Mudasir,">
+              <Button className="text-white">
+                <ExternalLink />
+                Contact Me
+              </Button>
+            </a>
           </div>
 
           {/* Right Side - Theme Toggle & Hamburger */}
@@ -78,7 +104,7 @@ function Navbar() {
           </div>
         )}
       </div>
-    </nav>
+    </motion.nav>
   );
 }
 
